@@ -20,4 +20,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
   });
 
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener('click', function(event) {
+      if (this.className = 'error') {
+        this.style.outline = 'none';
+      }
+    });
+  }
+
 });
