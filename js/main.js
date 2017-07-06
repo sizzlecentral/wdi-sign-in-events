@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   });
 
   submit.addEventListener('click', function(event) {
+    event.stopPropagation();
     for (var i = 0; i < input.length; i++) {
       input[i].className = 'error';
     }
@@ -22,10 +23,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('click', function(event) {
+      event.stopPropagation();
       if (this.className = 'error') {
         this.style.outline = 'none';
       }
     });
   }
+
+  modal.addEventListener('click', function(event) {
+    modal.style.display = 'none';
+  });
 
 });
